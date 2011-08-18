@@ -1,0 +1,16 @@
+			case "br": // Brazilian Portuguese
+			// start http errors
+			$error[0] = "Arquivo: <b>".$this->the_file."</b> transferido com sucesso!";
+			$error[1] = "O tamanho do arquivo enviado &eacute; maior que o permitido pelas configura&ccedil;&otilde;es do servidor.";
+			$error[2] = "O tamanho do arquivo enviado excede o permitido pela diretiva MAX_FILE_SIZE especificada no formulário.";
+			$error[3] = "O arquivo enviado foi transferido apenas parcialmente";
+			$error[4] = "Nenhum arquivo transferido";
+			// end  http errors
+			$error[10] = "Por favor, selecione um arquivo para transferir.";
+			$error[11] = "Somente são permitidos arquivos com as seguintes extensões: : <b>".$this->ext_string."</b>";
+			$error[12] = "Desculpe, mas o nome do arquivo contém caracteres inválidos. Use somente caracteres alfanuméricos e separe as partes do nome(se necessário) com o caracter sublinhado (_). <br>Um nome válido termina com um ponto, seguido de sua extensão.";
+			$error[13] = "O nome do arquivo é maior que o tamanho permitido de ".$this->max_length_filename." caracteres.";
+			$error[14] = "Desculpe, mas o diretório de transferência não existe!";
+			$error[15] = "Transferindo <b>".$this->the_file."... Erro!</b> Desculpe, já existe um arquivo com este nome.";
+			$error[16] = "O arquivo recebido foi renomeado para <b>".$this->file_copy."</b>.";
+			break;

@@ -1,0 +1,15 @@
+﻿case "hu":
+$error[0] = "Logó: <b>".$this->the_file."</b> sikeresen feltöltve!";
+$error[1] = "A feltöltendő állomány mérete meghaladja a szerver konfigurációban megengedett méretet";
+$error[2] = "A feltöltendo állomány mérete meghaladja az űrlapon megengedett méretet.";
+$error[3] = "A kép csak részben töltodött fel";
+$error[4] = "Nincs feltölthető állomány";
+$error[10] = "Kérem válasszon ki egy képet a feltöltéshez";
+$error[11] = "Kizárólak csak az alábbi kiterjesztésű fájlok feltöltése engedélyezett: <b>".$this->ext_string."</b>";
+$error[12] = "Sajnálom, de a megadott állomány nevében helytelen karakterek szerepelnek. Kérem, hogy csak alfanumerikus(szám vagy betű kombinációja) karaktereket használjon. Amennyiben szükséges az elválasztáshoz használjon alsóvonást (SHIFT+Kötöjel) kötöjel helyett. <br>A helyes állománynév végén pont (.) szerepel utánna a kiterjesztéssel. Pl.: 1796_abrakadabra.jpg";
+$error[13] = "Az állománynév hossza meghaladja a megengedett maximális hosszt:".$this->max_length_filename.";
+$error[14] = "Sajnálom de a feltöltési könyvtár nem létezik!";
+$error[15] = "Feltöltés: <b>".$this->the_file."...Hiba!</b> Sajnálom de a megadott név már foglalt.";
+$error[16] = "A feltöltött állomány átnevezére került <b>".$this->file_copy." névre.</b>.";
+$error[17] = "A(z) %s állomány nem létezik.";
+break;

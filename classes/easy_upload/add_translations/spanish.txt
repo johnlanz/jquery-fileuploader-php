@@ -1,0 +1,15 @@
+			case "es": // spanish translation
+			$error[0] = "El fichero: <b>".$this->the_file."</b> se ha cargado correctamente!";
+			$error[1] = "El fichero a cargar excede del tama&ntilde;o m&aacute;ximo de la directiva en la configuraci&oacute;n del servidor.";
+			$error[2] = "El fichero a cargar excede del tama&ntilde;o m&aacute;ximo de la directiva especificada en el formulario html.";
+			$error[3] = "El fichero a cargar solo lo ha sido parcialmente.";
+			$error[4] = "El fichero no ha sido cargado.";
+			$error[10] = "Por favor seleccione un fichero a cargar.";
+			$error[11] = "Solo ficheros con las siguientes extensiones est&aacute;n permitidos: <b>".$this->ext_string."</b>";
+			$error[12] = "Lo siento, el nombre del fichero contiene car&aacute;cteres invalidos. Use solo car&aacute;cteres alfanum&eacute;ricos y separe (si es necesario) con un subrayado. <br>Un nombre de fichero correcto acaba con un punto seguido de la extensi&oacute;n.";
+			$error[13] = "El nombre de fichero excede de la longitud m&aacute;xima de ".$this->max_length_filename." car&aacute;cteres.";
+			$error[14] = "¡Lo siento, el directorio de destino no existe!";
+			$error[15] = "Cargando <b>".$this->the_file."...Error!</b> lo siento, un fichero con el mismo nombre ya existe.";
+			$error[16] = "The uploaded file is renamed to <b>".$this->file_copy."</b>.";
+			break;
+

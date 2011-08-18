@@ -1,0 +1,42 @@
+Easy PHP Upload: Updates & changes 
+Last updated: 2006-08-09
+
+version 2.32 - Check comments inside the class structure or the update information from the website
+
+version 2.31 - If someone use more then one file upload at the same time while using the rename option there was a problem with the new name. The PHP function "sleep" take care about unique filen names. I added a new method that outputs some html code which I often use if the file name is stored in a database. If there is a name defined as an argument the file field is replaced with a regular text field, note the new example file "upload_db_example.php".
+
+version 2.30 - If the class is configured without filename validation and the file will not be renamed by the class or user, there is a problem if there are space characters in the name. I modified the method set_file_name() to take care of this.
+
+version 2.29 - To make this class compatible for server platforms without MIME_MAGIC support there is a validation now (get_uploaded_file_info()). A user (Brad Daily) notified me about that the regex pattern inside the method check_file_name() is to hard for several extension types. The check is not so important because there is also a check for extensions against the $extensions array, it’s fixed with a new regular expression pattern.
+
+version 2.28 - I added two more languages (for the messages) to the class: Brazilian Portuguese and Bulgarian, thanks Martin Bossev and Claudio Pereira for doing the translation jobs. All translations (except de, nl, en and fr) are stored in external files (directory "add_translations"). I noticed that the new function to create not existing directories is not working for the photo upload extension. This is fixed in this version. The method check_dir() is more flexible now and can be used for more locations. I modified the method process_image() from the photo_upload extension to use this check now.
+
+version 2.27 - The class has used the system() function before to execute the chmod command. This will result in problems if the php directive safe_mode is aktivated. A user suggested the use of the chmod() function instead, thanks Ignas for the comment! In this version its possible to create the upload directory if not exist (obe level above). This is usefull is you need a directory for each user. The directory will be created if the boolean $create_directory is true.
+
+version 2.26 - The resize process of bigger images (> 1MB) inside the photo upload extension takes much of resources. A better way is the use of ImageMagick in place of the GD library. Just switch the new boolean $use_image_magick inside the photo_upload extension. The methods img_rotate() and thumbs() are modified to be used with ImageMagick commands. You need to have access to the command line (exec() command) to use this feature.
+
+version 2.25 - I modified the photo upload extension to make the script more intelligent. Now its possible to define max. limit for the x and y size. The script will decide automatically which size (x or y) is not within the limit and will resize the image. I noticed that (after release of ver. 2.23) some people have problems which variable holds the filename after the upload. There is more information available now.
+
+version 2.24 - In this version it's possible to use the rename function (timestamp) inside the multiple upload extension. In the same extension the filenames are validate too. I fixed also a small bug inside regex pattern. Check the modified method upload_multi_files() and the new variables.
+
+version 2.23 - In this version is it possible to define a custom new name for the uploaded file. Check this updated methodes: error_text(), upload(), check_file_name(), existing_file() and the new one: set_file_name().
+
+version 2.22 - I changed the class to work with configurations where register_globals = off an added the german translations, thank you Dirk Klingenberg!
+
+version 2.21 - Added spanish messages to the class, thanks Sergio for the translations.
+
+version 2.20 - I changed the upload() method to handle also unique filenames. This will happen if you set the var $rename_file on true. I added also some user friendly (dutch) messages to the main class. I isolated the function to get the file extension into a new method: function get_extension(). Notice the new extension: "foto_upload", these are some easy to use functions to resize an rotate images. After the thumbnail and photo creation is done there is delete method to remove the (orig.) uploaded file.
+
+version 2.10 - The check_file_name() method tests now the string length and checks that the filename is not empty (I removed the file check from the upload method). The $message property is changed into an array. This array will be filled by the error_text() method (this method is a extended version of the old report_error() method). Inside this method you can switch the message by the new property $language to use translations for the output. The message output is done by the new show_error_string() method. I did also some cleaning work and (small) bug fixing in several methods. I changed the multi_upload_example to work with the new error reporting methodes, too.
+
+version 2.02 - The method upload() has boolean function now. There is now a property to switch the method check_file_name() on or off. CHMOD = 0777
+if the property $replace is set to "y".
+
+version 2.01 - added a new method: With "check_file_name()" the class will controle if a filename uses only charcters recognized by a regular filesytem.
+
+version 2.00 - made this class more compact (removed some useless variables) and added a new method(show_extensions()) to the basic class. All messages are saved from now in the $message property (not replaced anymore) New in this release is the multi upload example, with an extended class is it possible to upload more then one file at the same time.
+
+version 1.10 - now the class will check if a file alreay exists. Use the replace-property to overwrite an old file. Notice the checkbox inside the 
+example file: Check this box to toggle the replace-property.
+
+version 1.01 - added the $DOCUMENT_ROOT server variable to the $upload_dir in the example.php and added the 'check_dir' method to the class. In this version the user get an error if the defined upload-directory doesn't exsit. 
